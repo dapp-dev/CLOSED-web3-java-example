@@ -11,7 +11,8 @@
         <version.assertj>3.6.0</version.assertj>
         <version.java>1.8</version.java>
         <version.junit>4.12</version.junit>
-        <version.web3j>1.1.1</version.web3j>
+        <version.web3j>2.1.0</version.web3j>
+        <version.maven.build-helper>3.0.0</version.maven.build-helper>
     </properties>
     <dependencies>
         <dependency>
@@ -48,6 +49,25 @@
                         <arg>-Werror</arg>
                     </compilerArgs>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>${version.maven.build-helper}</version>
+                <executions>
+                    <execution>
+                        <id>add-source</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>${project.basedir}/src-gen/main/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
