@@ -32,7 +32,9 @@ contracts                → Ethereum contract source code (solidity language) +
  └ compiled              → Compiled contracts (binary + abi).
 src                      → Home of Java sources (Maven style directory layout)
 src-gen                  → Home of generated sources (produced by mvn clean package)
+wallet                   → The cryptographic wallet containing the user credentials (public/private key)
 ```
+
 The compiled contracts and the generated files (see above) are checked in into Github, so you don't have to cope with contract development for now.
 
 ### Main Classes
