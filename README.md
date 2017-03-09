@@ -20,3 +20,23 @@ Starting point:
 * [Solidity Docs](https://solidity.readthedocs.io/en/develop/introduction-to-smart-contracts.html])
 
 **Ask on any questions!**
+
+---
+
+## The Details
+
+### Structure of the project
+
+```
+contracts                → Ethereum contract source code (solidity language) + compile script
+ └ compiled              → Compiled contracts (binary + abi)
+src                      → Home of Java sources (Maven style directory layout)
+src-gen                  → Home of generated sources (produced by mvn clean package)
+```
+
+Generated files are checked in into Github, so you don't have to cope with contract development for now.
+
+### Main Classes
+
+* `com.hshnordbank.util.Deploy` deploys a contract to the blockchain
+* `com.hshnordbank.util.ListSSDs` prints the contracts of a specific user to the console
