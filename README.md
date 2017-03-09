@@ -29,12 +29,11 @@ Starting point:
 
 ```
 contracts                → Ethereum contract source code (solidity language) + compile script
- └ compiled              → Compiled contracts (binary + abi)
+ └ compiled              → Compiled contracts (binary + abi).
 src                      → Home of Java sources (Maven style directory layout)
 src-gen                  → Home of generated sources (produced by mvn clean package)
 ```
-
-Generated files are checked in into Github, so you don't have to cope with contract development for now.
+The compiled contracts and the generated files (see above) are checked in into Github, so you don't have to cope with contract development for now.
 
 ### Main Classes
 
