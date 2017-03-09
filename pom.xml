@@ -12,7 +12,8 @@
         <version.java>1.8</version.java>
         <version.junit>4.12</version.junit>
         <version.web3j>2.1.0</version.web3j>
-        <version.maven.build-helper>3.0.0</version.maven.build-helper>
+        <version.build-helper-maven-plugin>3.0.0</version.build-helper-maven-plugin>
+        <version.exec-maven-plugin>1.6.0</version.exec-maven-plugin>
     </properties>
     <dependencies>
         <dependency>
@@ -53,7 +54,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
-                <version>${version.maven.build-helper}</version>
+                <version>${version.build-helper-maven-plugin}</version>
                 <executions>
                     <execution>
                         <id>add-source</id>
@@ -65,6 +66,49 @@
                             <sources>
                                 <source>${project.basedir}/src-gen/main/java</source>
                             </sources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${version.exec-maven-plugin}</version>
+                <executions>
+                    <execution>
+                        <id>generate-ssd</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>org.web3j.codegen.SolidityFunctionWrapperGenerator</mainClass>
+                            <arguments>
+                                <argument>contracts/compiled/SSD.bin</argument>
+                                <argument>contracts/compiled/SSD.abi</argument>
+                                <argument>-o</argument>
+                                <argument>src-gen/main/java</argument>
+                                <argument>-p</argument>
+                                <argument>com.hshnordbank.ssd.wrapper</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-ssd-registry</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>org.web3j.codegen.SolidityFunctionWrapperGenerator</mainClass>
+                            <arguments>
+                                <argument>contracts/compiled/SSDRegistry.bin</argument>
+                                <argument>contracts/compiled/SSDRegistry.abi</argument>
+                                <argument>-o</argument>
+                                <argument>src-gen/main/java</argument>
+                                <argument>-p</argument>
+                                <argument>com.hshnordbank.ssd.wrapper</argument>
+                            </arguments>
                         </configuration>
                     </execution>
                 </executions>
