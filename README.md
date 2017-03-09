@@ -37,5 +37,5 @@ The compiled contracts and the generated files (see above) are checked in into G
 
 ### Main Classes
 
-* `com.hshnordbank.util.Deploy` deploys a contract to the blockchain
+* `com.hshnordbank.util.DeploymentExample` deploys a contract to the blockchain
 * `com.hshnordbank.util.ListSSDs` prints the contracts of a specific user to the console

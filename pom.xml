@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.assertj>3.6.0</version.assertj>
+        <version.assertj>3.6.2</version.assertj>
         <version.java>1.8</version.java>
         <version.junit>4.12</version.junit>
         <version.web3j>2.1.0</version.web3j>
