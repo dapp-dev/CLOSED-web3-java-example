@@ -12,7 +12,7 @@ Open and start the main classes in `src/main/java/...`
 
 ## Homework
 
-Fix the TODOs.
+Fix the TODOs and make the Unit tests green.
 
 Starting point:
  
