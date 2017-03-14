@@ -1,7 +1,7 @@
-/*  ______ __    ______ ______ __  __ ______  _____  __ __  __
- * |  ___ |  |  |  __  |  ____|  |/ _|  ____|/  _  \|..|  \|  | (C)opyright 2017 HSH Nordbank
- * |  ___<|  \__|  \_| |  \___|    <_|  \___|  |_|  |  |      | The dapp-dev team.
- *  \_____|\____|\_____|\_____|__|\__|\_____|__| |__|__|__|\__|
+/*  ______ __    ______ ______ __  __ ______ __   __  _____  __ __  __
+ * |  ___ |  |  |  __  |  ____|  |/ _|  ____|  |_|  |/  _  \|..|  \|  | (C)opyright 2017 HSH Nordbank
+ * |  ___<|  \__|  \_| |  \___|    <_|  \___|   _   |  |_|  |  |      | The dapp-dev team.
+ *  \_____|\____|\_____|\_____|__|\__|\_____|__| |__|__| |__|__|__|\__|
  */
 package com.hshnordbank.web3j.example;
 
@@ -13,9 +13,7 @@ import org.web3j.abi.datatypes.Bool;
 
 import java.util.concurrent.Future;
 
-import static com.hshnordbank.ssd.wrapper.SSDRegistry.*;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.web3j.tx.Contract.GAS_LIMIT;
 
 public class DeploymentExampleTest extends AbstractCodexxaTest {
 
