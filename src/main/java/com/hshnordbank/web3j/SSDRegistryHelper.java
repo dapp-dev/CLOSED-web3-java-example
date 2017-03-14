@@ -8,7 +8,7 @@ package com.hshnordbank.web3j;
 import com.hshnordbank.ssd.wrapper.SSDRegistry;
 import org.web3j.protocol.Web3j;
 
-public class SSDRegistryHelper {
+public final class SSDRegistryHelper {
 
     private SSDRegistryHelper() {
         throw new IllegalAccessError();
