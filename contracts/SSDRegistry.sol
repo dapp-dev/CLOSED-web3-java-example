@@ -19,6 +19,7 @@ contract SSDRegistry {
     _;
   }
 
+
   function isDeployed() constant returns (bool) {
     return true;
   }
@@ -52,11 +53,11 @@ contract SSDRegistry {
     logNewSSD(ssd);
   }
 
-  function getSSDCount(address counterparty) returns (uint) {
+  function getSSDCount(address counterparty) constant returns (uint) {
     return ssds[counterparty].length;
   }
 
-  function getSSD(address counterparty, uint index) returns (
+  function getSSD(address counterparty, uint index) constant returns (
     SSD,     // the ssd (address)
     uint8,   // ssd state
     address, // counterparty

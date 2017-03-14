@@ -11,7 +11,8 @@ import org.web3j.protocol.core.methods.response.Web3ClientVersion;
 public class GetVersionExample implements BlockchainHelper {
 
     public static void main(String[] args) {
-        new GetVersionExample().run();
+        String run = new GetVersionExample().run();
+        System.out.println(run);
     }
 
     String run() {
