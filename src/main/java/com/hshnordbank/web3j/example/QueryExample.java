@@ -8,14 +8,11 @@ package com.hshnordbank.web3j.example;
 import com.hshnordbank.ssd.wrapper.SSDRegistry;
 import com.hshnordbank.web3j.AccountHelper;
 import com.hshnordbank.web3j.SSDRegistryHelper;
-import org.web3j.abi.datatypes.NumericType;
 import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
