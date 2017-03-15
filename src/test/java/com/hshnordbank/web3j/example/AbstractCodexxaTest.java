@@ -16,7 +16,7 @@ import static org.web3j.tx.Contract.GAS_LIMIT;
 import static org.web3j.tx.ManagedTransaction.GAS_PRICE;
 
 abstract class AbstractCodexxaTest {
-
+    
     private static final BigInteger MAX_GAS_PER_TX = BigInteger.valueOf(3141592L);
 
     // every test has its own web3j instance

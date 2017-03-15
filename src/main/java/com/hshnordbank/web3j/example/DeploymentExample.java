@@ -5,10 +5,17 @@
  */
 package com.hshnordbank.web3j.example;
 
+import com.hshnordbank.ssd.wrapper.SSDRegistry;
+import com.hshnordbank.web3j.TransactionHelper;
 import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
+import org.web3j.protocol.core.methods.response.TransactionReceipt;
 
 import java.math.BigInteger;
+import java.util.Optional;
+import java.util.concurrent.Future;
+
+import static com.hshnordbank.web3j.AsyncHelper.waitForResult;
 
 /**
  * An example that deploys the SSDRegistry contract and returns the new address.
@@ -20,7 +27,15 @@ public class DeploymentExample implements Example<String> {
         // HOMEWORK -->
         // Use one of the com.hshnordbank.ssd.wrapper.SSDRegistry.deploy() methods
         // to deploy the SSDRegistry to the blockchain.
-        return null; // TODO
+
+        final Future<SSDRegistry> deploy = SSDRegistry.deploy(web3j, credentials, gasPrice, gasLimit, gasValue);
+        final SSDRegistry ssdRegistry = waitForResult(deploy);
+        final Optional<TransactionReceipt> txReceiptOption = ssdRegistry.getTransactionReceipt();
+        txReceiptOption.ifPresent(txReceipt ->
+                System.out.println(TransactionHelper.stringify(txReceipt))
+        );
+        return ssdRegistry.getContractAddress();
+        
         // <-- HOMEWORK
     }
 
