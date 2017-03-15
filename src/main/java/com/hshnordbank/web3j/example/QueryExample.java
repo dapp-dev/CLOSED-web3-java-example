@@ -5,11 +5,19 @@
  */
 package com.hshnordbank.web3j.example;
 
+import com.hshnordbank.ssd.wrapper.SSDRegistry;
+import com.hshnordbank.web3j.AccountHelper;
+import com.hshnordbank.web3j.SSDRegistryHelper;
+import org.web3j.abi.datatypes.NumericType;
 import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.web3j.abi.datatypes.Address;
 import org.web3j.abi.datatypes.Type;
@@ -18,21 +26,28 @@ import org.web3j.abi.datatypes.generated.Uint256;
 /**
  * An example that queries the list of SSDs of the default user.
  */
-public class QueryExample implements Example<List<?>> {
+public class QueryExample implements Example<List<String>> {
 
     @Override
-    public List<?> run(Web3j web3j, Credentials credentials, BigInteger gasPrice, BigInteger gasLimit, BigInteger gasValue) {
+    public List<String> run(Web3j web3j, Credentials credentials, BigInteger gasPrice, BigInteger gasLimit, BigInteger gasValue) {
         // HOMEWORK -->
         // Use com.hshnordbank.ssd.wrapper.SSDRegistry to load the list of SSDs
         // 1) The method getSSDCount(Address user) returns the number of SSDs for a specific user (getDefaultAccount)
         // 2) The method getSSD(Address user, Uint256 index) returns the SSD with 0 <= index < ssdCount for a specfic user
-		final Address defaultAccount = getDefaultAccount();
-		int ssdCount = getSSDRegistry().getSSDCount(defaultAccount).get().getValue().intValue();
-		final List<List<Type>> ssds = new ArrayList<>();
-		for (int i = 0; i < ssdCount; i++) {
-			ssds.add(getSSDRegistry().getSSD(defaultAccount, new Uint256(BigInteger.valueOf(i))).get());
+		try {
+			final Address counterparty = AccountHelper.getDefaultAccount(web3j);
+			final SSDRegistry ssdRegistry = SSDRegistryHelper.getSSDRegistry(web3j, "0x3b8d7b5c06241f033528608f3a4d2a885138c7c5");
+			final int ssdCount = ssdRegistry.getSSDCount(counterparty).get().getValue().intValue();
+			final List<String> ssds = new ArrayList<>();
+			for (int i = 0; i < ssdCount; i++) {
+				final List<Type> types = ssdRegistry.getSSD(counterparty, new Uint256(BigInteger.valueOf(i))).get();
+                final String ssd = types.stream().map(type -> String.valueOf(type.getValue())).collect(Collectors.joining(", "));
+				ssds.add(ssd);
+			}
+			return ssds;
+		} catch(Exception x) {
+			throw new IllegalStateException("Error loading SSD List", x);
 		}
-		return ssds;
         // <-- HOMEWORK
     }
 

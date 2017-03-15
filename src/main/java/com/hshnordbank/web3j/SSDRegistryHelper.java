@@ -22,10 +22,16 @@ public final class SSDRegistryHelper {
      * @return A new instance of SSDRegistry
      */
     public static SSDRegistry getSSDRegistry(Web3j web3j, String ssdRegistryAddress) {
-        return SSDRegistry.load(ssdRegistryAddress, web3j,
+        final SSDRegistry ssdRegistry = SSDRegistry.load(
+                ssdRegistryAddress,
+                web3j,
                 CredentialsHelper.getDefaultCredentials(),
                 SSDRegistry.GAS_PRICE,
                 SSDRegistry.GAS_LIMIT);
+        if (ssdRegistry == null) {
+            throw new IllegalStateException("SSDRegistry not found at Address");
+        }
+        return ssdRegistry;
     }
 
 }

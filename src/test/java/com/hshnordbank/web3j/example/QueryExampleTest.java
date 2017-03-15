@@ -5,8 +5,22 @@
  */
 package com.hshnordbank.web3j.example;
 
-public class QueryExampleTest {
+import org.junit.Test;
+import java.util.List;
 
-    // TODO: @Daniel
+import static org.assertj.core.api.Assertions.assertThat;
+
+public class QueryExampleTest extends AbstractCodexxaTest {
+
+    @Test
+    public void shouldGetSSDListOfCounterparty() {
+        final List<String> ssds = run(new QueryExample());
+        assertThat(ssds).isNotNull();
+        // TEST -->
+        for (String ssd : ssds) {
+            System.out.println(ssds);
+        }
+        // <-- TEST
+    }
 
 }
