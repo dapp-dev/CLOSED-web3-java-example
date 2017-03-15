@@ -8,6 +8,7 @@ package com.hshnordbank.web3j;
 import org.web3j.protocol.core.Request;
 import org.web3j.protocol.core.Response;
 
+import java.io.IOException;
 import java.util.concurrent.Future;
 
 public final class AsyncHelper {
@@ -27,7 +28,7 @@ public final class AsyncHelper {
     public static <T extends Response<?>> T waitForResult(Request<?, T> request) {
         try {
             return request.send();
-        } catch (Exception x) {
+        } catch (IOException x) {
             throw new IllegalStateException("Error retrieving the async result from the blockchain.", x);
         }
     }

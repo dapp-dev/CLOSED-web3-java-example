@@ -18,7 +18,7 @@ public class QueryExampleTest extends AbstractCodexxaTest {
         assertThat(ssds).isNotNull();
         // TEST -->
         for (String ssd : ssds) {
-            System.out.println(ssds);
+            System.out.println(ssd);
         }
         // <-- TEST
     }
