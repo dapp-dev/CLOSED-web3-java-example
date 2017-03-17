@@ -5,7 +5,7 @@
  */
 package com.hshnordbank.web3j;
 
-import com.hshnordbank.ssd.wrapper.SSDRegistry;
+import com.hshnordbank.ssd.wrapper.*;
 import org.web3j.protocol.Web3j;
 
 public final class SSDRegistryHelper {
@@ -29,7 +29,7 @@ public final class SSDRegistryHelper {
                 SSDRegistry.GAS_PRICE,
                 SSDRegistry.GAS_LIMIT);
         if (ssdRegistry == null) {
-            throw new IllegalStateException("SSDRegistry not found at Address");
+            throw new IllegalStateException("SSDRegistry not found at " + ssdRegistryAddress);
         }
         return ssdRegistry;
     }
