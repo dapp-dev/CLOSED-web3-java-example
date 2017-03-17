@@ -33,7 +33,7 @@ public class QueryExample implements Example<List<String>> {
         // 2) The method getSSD(Address user, Uint256 index) returns the SSD with 0 <= index < ssdCount for a specfic user
 		try {
 			final Address counterparty = AccountHelper.getDefaultAccount(web3j);
-			final SSDRegistry ssdRegistry = SSDRegistryHelper.getSSDRegistry(web3j, "0x3b8d7b5c06241f033528608f3a4d2a885138c7c5");
+			final SSDRegistry ssdRegistry = SSDRegistryHelper.getSSDRegistry(web3j, "0xd452ec5dcc346411cd3ac16806c8a479354cf794");
 			final int ssdCount = ssdRegistry.getSSDCount(counterparty).get().getValue().intValue();
 			final List<String> ssds = new ArrayList<>();
 			for (int i = 0; i < ssdCount; i++) {

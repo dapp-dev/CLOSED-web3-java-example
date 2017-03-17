@@ -35,7 +35,7 @@ public class DeploymentExample implements Example<String> {
                 System.out.println(TransactionHelper.stringify(txReceipt))
         );
         return ssdRegistry.getContractAddress();
-        
+
         // <-- HOMEWORK
     }
 
