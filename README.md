@@ -1,6 +1,6 @@
 # Web3j Java Example
 
-Hannes
+# Happy Coding !!!
 
 ## Installation
 
