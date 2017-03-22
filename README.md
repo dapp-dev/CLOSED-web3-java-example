@@ -21,6 +21,8 @@ Starting point:
 
 **Ask on any questions!**
 
+---
+
 ## The Details
 
 ### Structure of the project
