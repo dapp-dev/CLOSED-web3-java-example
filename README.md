@@ -1,5 +1,7 @@
 # Web3j Java Example
-Lasse
+
+Hannes
+
 ## Installation
 
 1. Install the latest version of Git: https://git-scm.com
