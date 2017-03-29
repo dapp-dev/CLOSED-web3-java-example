@@ -1,5 +1,6 @@
 # Web3j Java Example
 
+[Dumb changes removed...]
 Es hat geklappt :)
 Bei mir auch :-)
 
