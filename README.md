@@ -1,6 +1,6 @@
 # Web3j Java Example
 
-Es hat geklappt :)
+[Dumb changes removed...]
 
 ## Installation
 
