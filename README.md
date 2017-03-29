@@ -1,6 +1,6 @@
 # Web3j Java Example
 
-Jan
+Es hat geklappt :)
 
 ## Installation
 
@@ -20,8 +20,6 @@ Starting point:
  
 * [Web3j Docs](https://docs.web3j.io)
 * [Solidity Docs](https://solidity.readthedocs.io/en/develop/introduction-to-smart-contracts.html])
-
-**Ask on any questions!**
 
 ## The Details
 
