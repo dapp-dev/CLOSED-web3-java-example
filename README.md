@@ -1,6 +1,6 @@
 # Web3j Java Example
 
-Hannes
+Jan
 
 ## Installation
 
