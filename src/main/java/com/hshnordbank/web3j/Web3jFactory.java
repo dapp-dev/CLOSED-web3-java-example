@@ -57,10 +57,10 @@ public class Web3jFactory {
                     this.pass = "start123";
                     this.gas_max = BigInteger.valueOf(3141592L);
                     break;
-                case 0; // PROD
+                case 0: // PROD
                     // TODO
                     break;
-                case 1; // DEFAULT
+                case 1: // DEFAULT
                     // if macOS ...
                     this.url = "http://cloud.codexxa.com:8545";
                     this.user = "default";
@@ -92,6 +92,7 @@ public class Web3jFactory {
             s.append("[");
             s.append(this.url);
             s.append("]");
+            return s.toString();
         }
     }
 
@@ -103,8 +104,8 @@ public class Web3jFactory {
     public static synchronized Web3jFactory getInstance(BlockchainEnvironment env) {
         Web3jFactory result = factories.get(env);
         if (result == null) {
-            result = new Web3jFactory(env),
-                    factories.put(result);
+            result = new Web3jFactory(env);
+            factories.put(env, result);
         }
         return result;
     }

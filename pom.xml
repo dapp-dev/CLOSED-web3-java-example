@@ -11,7 +11,7 @@
         <version.assertj>3.6.2</version.assertj>
         <version.java>1.8</version.java>
         <version.junit>4.12</version.junit>
-        <version.web3j>2.1.0</version.web3j>
+        <version.web3j>2.2.1</version.web3j>
         <version.build-helper-maven-plugin>3.0.0</version.build-helper-maven-plugin>
         <version.exec-maven-plugin>1.6.0</version.exec-maven-plugin>
     </properties>
